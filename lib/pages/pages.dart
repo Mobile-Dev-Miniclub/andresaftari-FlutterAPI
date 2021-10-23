@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:latian_api/model/models.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 part 'add/add_page.dart';
 part 'home/home_page.dart';
