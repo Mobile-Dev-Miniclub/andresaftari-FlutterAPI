@@ -12,7 +12,7 @@ class _AddPageState extends State<AddPage> {
 
   var size = 0;
   var name = '';
-  var avatar =
+  var dummyAvatar =
       'https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Adhisty_Zara_SK_04Dec19_IMG_0071.jpg/800px-Adhisty_Zara_SK_04Dec19_IMG_0071.jpg';
 
   @override
@@ -25,7 +25,7 @@ class _AddPageState extends State<AddPage> {
       ),
       child: Container(
         width: MediaQuery.of(context).size.width,
-        height: 220,
+        height: 180,
         child: Form(
           key: _postFieldKey,
           child: Padding(
@@ -67,7 +67,7 @@ class _AddPageState extends State<AddPage> {
                     String lname = '';
 
                     if (_postFieldKey.currentState!.validate()) {
-                      UserPost.postUser(name, avatar).then((value) {
+                      UserPost.postUser(name, dummyAvatar).then((value) {
                         if (name.contains(" ")) {
                           fname = name.substring(0, name.indexOf(" "));
                           lname =
@@ -77,7 +77,7 @@ class _AddPageState extends State<AddPage> {
                             id: size.toString(),
                             fname: fname,
                             lname: lname,
-                            image: avatar,
+                            image: dummyAvatar,
                           );
 
                           newList!.add(newUser);
@@ -86,7 +86,7 @@ class _AddPageState extends State<AddPage> {
                             id: size.toString(),
                             fname: name,
                             lname: '',
-                            image: avatar,
+                            image: dummyAvatar,
                           );
 
                           newList!.add(newUser);

@@ -5,9 +5,10 @@ import 'package:flutter_linkify/flutter_linkify.dart';
 import 'package:latian_api/model/models.dart';
 
 part 'add/add_page.dart';
-part 'home/home_page.dart';
-part 'profile/profile_page.dart';
 
+part 'home/home_page.dart';
+
+part 'profile/profile_page.dart';
 
 class MainNavigation extends StatefulWidget {
   const MainNavigation({Key? key}) : super(key: key);
@@ -43,7 +44,10 @@ class _MainNavigationState extends State<MainNavigation> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(_currentTitle(_currentIndex), style: TextStyle(color: Colors.blueAccent),),
+        title: Text(
+          _currentTitle(_currentIndex),
+          style: TextStyle(color: Colors.blueAccent),
+        ),
         centerTitle: true,
         backgroundColor: Colors.white,
         elevation: 0,
