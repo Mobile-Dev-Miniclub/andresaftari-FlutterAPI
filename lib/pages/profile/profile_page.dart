@@ -36,11 +36,6 @@ class ProfilePage extends StatelessWidget {
                   fontSize: 16,
                   fontWeight: FontWeight.bold,
                 ),
-                onOpen: (link) async {
-                  if (await canLaunch(link.url)) {
-                    await launch(link.url);
-                  } else throw 'Could not launch $link';
-                },
               ),
             ],
           ),
