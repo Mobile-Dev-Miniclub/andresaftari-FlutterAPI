@@ -91,6 +91,10 @@ class _AddPageState extends State<AddPage> {
 
                           newList!.add(newUser);
                         }
+
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(content: Text('Berhasil menambahkan user')),
+                        );
                       });
                     }
                   },
