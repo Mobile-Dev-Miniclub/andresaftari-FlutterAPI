@@ -25,6 +25,7 @@ class _HomePageState extends State<HomePage> {
           print('${snapshot.data}');
 
           List<UserList>? list = snapshot.data;
+          if (newList!.isNotEmpty) list = newList;
 
           return ListView.builder(
             itemCount: list!.length,
@@ -48,7 +49,7 @@ class _HomePageState extends State<HomePage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Image(
-                          image: NetworkImage(list[index].image),
+                          image: NetworkImage(list![index].image),
                           width: 80,
                           fit: BoxFit.fill,
                           height: 80,
@@ -57,34 +58,7 @@ class _HomePageState extends State<HomePage> {
                               const Icon(Icons.link),
                         ),
                         SizedBox(width: 4.0),
-                        Flexible(
-                          child: Padding(
-                            padding: const EdgeInsets.only(
-                              left: 8.0,
-                              right: 8.0,
-                              top: 4.0,
-                            ),
-                            child: Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  list[index].fname,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 24.0,
-                                  ),
-                                ),
-                                Text(
-                                  list[index].lname,
-                                  style: TextStyle(
-                                    fontWeight: FontWeight.w400,
-                                    fontSize: 16.0,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
+                        _cardUserName(list, index),
                       ],
                     ),
                   ),
@@ -114,4 +88,33 @@ class _HomePageState extends State<HomePage> {
       },
     );
   }
+
+  Widget _cardUserName(List<UserList> list, int index) => Flexible(
+    child: Padding(
+      padding: const EdgeInsets.only(
+        left: 8.0,
+        right: 8.0,
+        top: 4.0,
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            list[index].fname,
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 24.0,
+            ),
+          ),
+          Text(
+            list[index].lname,
+            style: TextStyle(
+              fontWeight: FontWeight.w400,
+              fontSize: 16.0,
+            ),
+          ),
+        ],
+      ),
+    ),
+  );
 }

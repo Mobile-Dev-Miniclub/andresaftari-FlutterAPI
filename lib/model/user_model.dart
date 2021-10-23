@@ -37,12 +37,12 @@ class UserList {
 
 class UserPost {
   static final String _baseURL = 'https://reqres.in/api/users';
-  final String id, name, job, created;
+  final String id, name, avatar, created; // DIGANTI KE AVATAR KARENA BIAR PAS AJA GITU SAMA CARD NYA :)
 
   UserPost({
     required this.id,
     required this.name,
-    required this.job,
+    required this.avatar,
     required this.created,
   });
 
@@ -50,14 +50,14 @@ class UserPost {
       UserPost(
         id: json['id'].toString(),
         name: json['name'],
-        job: json['job'],
+        avatar: json['job'],
         created: json['createdAt'],
       );
 
-  static Future<UserPost> postUser(String name, String job) async {
+  static Future<UserPost> postUser(String name, String avatar) async {
     Uri url = Uri.parse("$_baseURL");
 
-    var res = await http.post(url, body: { 'name': name, 'job': job},);
+    var res = await http.post(url, body: { 'name': name, 'job': avatar},);
     var jsonObj = json.decode(res.body);
 
     return UserPost.fromJson(jsonObj);

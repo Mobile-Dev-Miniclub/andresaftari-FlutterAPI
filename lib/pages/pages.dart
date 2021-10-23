@@ -18,11 +18,6 @@ class MainNavigation extends StatefulWidget {
 class _MainNavigationState extends State<MainNavigation> {
   int _currentIndex = 0;
 
-  static const TextStyle optionStyle = TextStyle(
-    fontSize: 28,
-    fontWeight: FontWeight.bold,
-  );
-
   static const List<Widget> _pageList = [
     HomePage(),
     AddPage(),
