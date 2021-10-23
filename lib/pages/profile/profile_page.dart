@@ -9,9 +9,9 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       margin: EdgeInsets.symmetric(horizontal: 8.0),
-      color: Colors.white30,
+      color: Colors.white70,
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(8.0)),
+        borderRadius: BorderRadius.all(Radius.circular(16.0)),
       ),
       child: Container(
         width: MediaQuery.of(context).size.width,
